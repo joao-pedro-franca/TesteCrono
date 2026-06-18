@@ -1,0 +1,80 @@
+/* Cronoplay — Gruvbox Dark Theme */
+
+:root {
+  /* Gruvbox Dark palette */
+  --gb-bg-hard:    #1d2021;
+  --gb-bg:         #282828;
+  --gb-bg-soft:    #32302f;
+  --gb-bg1:        #3c3836;
+  --gb-bg2:        #504945;
+  --gb-bg3:        #665c54;
+  --gb-bg4:        #7c6f64;
+  --gb-gray:       #928374;
+  --gb-fg4:        #a89984;
+  --gb-fg3:        #bdae93;
+  --gb-fg2:        #d5c4a1;
+  --gb-fg1:        #ebdbb2;
+  --gb-fg0:        #fbf1c7;
+
+  /* Accent colours */
+  --gb-red:        #cc241d;
+  --gb-red-bright: #fb4934;
+  --gb-orange:     #d65d0e;
+  --gb-yellow:     #d79921;
+  --gb-yellow-bright: #fabd2f;
+  --gb-green:      #98971a;
+  --gb-green-bright: #b8bb26;
+  --gb-teal:       #458588;
+  --gb-teal-bright:#83a598;
+  --gb-purple:     #b16286;
+
+  /* Gradients */
+  --gb-gradient-bg:      linear-gradient(135deg, #1d2021 0%, #282828 100%);
+  --gb-gradient-primary: linear-gradient(135deg, #d79921 0%, #b57614 100%);
+  --gb-gradient-card:    linear-gradient(135deg, rgba(60,56,54,0.6) 0%, rgba(50,48,47,0.5) 100%);
+
+  /* Glassmorphism — Gruvbox */
+  --sleepquest-glass-bg:     rgba(60,56,54,0.45);
+  --sleepquest-glass-border: rgba(80,73,69,0.6);
+  --sleepquest-glass-blur:   blur(10px);
+}
+
+/* Glass card — warm dark surface */
+.glass-card {
+  background: var(--sleepquest-glass-bg);
+  backdrop-filter: var(--sleepquest-glass-blur);
+  -webkit-backdrop-filter: var(--sleepquest-glass-blur);
+  border: 1px solid var(--sleepquest-glass-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { filter: drop-shadow(0 0 10px rgba(215,153,33,0.4)); }
+  50%       { filter: drop-shadow(0 0 20px rgba(215,153,33,0.7)); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -1000px 0; }
+  100% { background-position:  1000px 0; }
+}
+
+@keyframes coin-pop {
+  0%   { transform: scale(0) rotate(0deg); }
+  50%  { transform: scale(1.2) rotate(180deg); }
+  100% { transform: scale(1) rotate(360deg); }
+}
+
+.animate-float      { animation: float       3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow  2s ease-in-out infinite; }
+.animate-coin-pop   { animation: coin-pop 0.6s cubic-bezier(0.68,-0.55,0.265,1.55); }
+
+/* Scrollbar */
+::-webkit-scrollbar       { width: 8px; }
+::-webkit-scrollbar-track { background: var(--gb-bg-hard); }
+::-webkit-scrollbar-thumb { background: var(--gb-bg2); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gb-bg3); }
